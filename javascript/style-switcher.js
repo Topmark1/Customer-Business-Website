@@ -42,3 +42,29 @@ else
     dayNight.querySelector("i").classList.add("fa-moon");
 }
 })
+/* toggle nav switcher */
+const navSwitcherToggle = document.querySelector('.nav-toggler');
+navSwitcherToggle.addEventListener('click',()=>{
+    document.querySelector(".aside").classList.toggle("open");
+    document.querySelector(".nav-toggler").classList.toggle("open");    
+})
+//hide nav sitcher on scroll and click
+const mainContent = document.querySelector(".main-content");
+mainContent.addEventListener('click',()=>{
+    if(document.querySelector('.aside').classList.contains('open'))
+    {
+        document.querySelector('.aside').classList.remove('open');
+        document.querySelector(".nav-toggler").classList.remove('open');   
+    };
+    if(document.querySelector('.style-switcher').classList.contains('open'))
+    {
+        document.querySelector('.style-switcher').classList.remove('open')
+    }
+})
+window.addEventListener("scroll",()=>{
+    if(document.querySelector('.aside').classList.contains('open'))
+    {
+        document.querySelector('.aside').classList.remove('open');
+        document.querySelector(".nav-toggler").classList.remove('open');
+    }
+})
